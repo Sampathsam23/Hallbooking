@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+  </head>
+  <body>
+    <section class="about-us">
+      <div class="about">
+        <img src="{% static "images/aboutimg.jpg" %}" class="pic" />
+        <div class="text">
+          <h1>About Us</h1>
+          <h5>A/c Semainar & <span>Events Halls</span></h5>
+          <p>
+            The A/C Seminar Hall with excellent seating arrangement and LCD
+            projector facilities is fully put to use by the Department.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

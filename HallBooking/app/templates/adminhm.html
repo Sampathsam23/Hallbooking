@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+  </head>
+  <link rel="stylesheet" href="..//static/css/adminhm.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  />
+  <body>
+   
+    </div>
+    <nav>
+      <div class="menu">
+        <div class="logo">
+        <img src="..//static/images/bhclogo.png" class="pic" />
+          <a href="#">Bishop Heber College</a>
+        </div>
+        <ul>
+          <li><a href="{% url 'adminstf' %}">Add Staff</a></li>
+          <li><a href="{% url 'adviewuser'%}">View User</a></li>
+          <li><a href="{% url 'adviewbook' %}">View Booking</a></li>
+          <li><a href="{% url 'approve' %}">Approve&Cancel</a></li>
+        </ul>
+      </div> 
+    </nav>
+    <div class="text">
+      <h2 data-text="HALL BOOKING.....">HALL BOOKING.....</h2>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+  </head>
+  
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="{% static 'css/stylehome.css' %}" />
+ 
+  <body>
+    {% for msg in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{msg}}    
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      {% endfor %}
+    <nav>
+      <div class="menu">
+        <div class="logo">
+          <img src="{% static "images/bhclogo.png" %}" class="pic" />
+          <a href="#">Bishop Heber College</a>
+        </div>
+        <ul>
+          
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'search' %}">Search</a></li>
+          <li><a href="{% url 'hallbook' %}">Hall Book</a></li>
+          <li><a href="{% url 'adviewbook' %}">view book</a></li>
+          <li><a href="{% url 'feedback' %}">Feedback</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="text">
+      <h2 data-text="HALL BOOKING.....">HALL BOOKING.....</h2>
+    </div>
+  </body>
+</html>

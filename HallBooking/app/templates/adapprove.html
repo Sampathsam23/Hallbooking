@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <style>
+        .btn {
+      border-radius: 4px;
+      height: 44px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      -webkit-transition: all 200ms linear;
+      transition: all 200ms linear;
+      padding: 0 30px;
+      letter-spacing: 1px;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
+      text-align: center;
+      border: none;
+      background-color: #ffeba7;
+      color: #102770;
+      box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+    }
+     </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center"><u>Approve/Cancel</u></h2><br>			
+        <table class="table table-dark table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>HallName</th>
+                <th>NoofAttendees</th>
+                <th>Phone</th>
+                <th>Date</th>
+                <th>NameofEvent</th>
+                <th>StartTime</th>
+                <th>EndTime</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- jinja2 Technique -->
+            {% if records %}
+            {% for i in records %}
+            <tr>
+                <td>{{i.Username}}</td>
+                <td>{{i.Department}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.Hallname}}</td>
+                <td>{{i.NumberofAttendees}}</td>
+                <td>{{i.Phone}}</td>
+                <td>{{i.Date}}</td>
+                <td>{{i.NameofEvent}}</td>
+                <td>{{i.StartTime}}</td>
+                <td>{{i.EndTime}}</td>
+                 
+                 <td><a href="{% url 'delete_book' i.id %}" class="btn btn-danger">Delete</a></td>
+                 <td><a href="{% url 'update_book' i.id %}" class="btn btn-primary">Update</a></td>
+
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+        </div>
+      
+</body>
+</html>

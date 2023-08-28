@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Hallbook</title>
+  </head>
+  <link rel="stylesheet" href="{% static 'css/search.css' %}" />
+  <body>
+    {% for msg in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{msg}}    
+      </div>
+      {% endfor %}
+    <div class="search-form">
+      <form action="{% url 'search'%}" method= "POST">{% csrf_token %}
+        <label for="name">USERNAME</label>
+        <input id="name" type="text" name = "name" required/>
+        
+        <label for="HALL">HALL NAME</label>
+        <select name="hname">
+          <option selected value="" disabled selected></option>
+          <option value="Hall">Select Hall</option>
+          <option value="Gallery HAll G-4">Gallery HAll G-4</option>
+          <option value="A/C Seminar Hall G-4">A/C Seminar Hall G-4</option>
+          <option value="A/C Seminar Hall G-2">A/C Seminar Hall G-2</option>
+          <option value="Multi-purpose Auditorium">Multi-purpose Auditorium</option>
+          <option value="Old Auditorium">Old Auditorium</option>
+          <option value="AdminBlock A-2">AdminBlock A-2</option>
+         <option value="CsBlock GroundFloor">CsBlock GroundFloor</option>
+        </select>
+        <label for="date">Date</label>
+        <input type="date" name = "date"/>
+        <label for="Required Time">Required Time</label>
+        <br/>
+        <br/>
+        <label for="Start Time">Start Time</label>
+        <input type="time" name = "stime" />
+        <label for="End Time">End Time</label>
+        <input type="time" name = "etime"/>
+        <div class="btn-block">
+          <button type="submit" ><b>Search</b></button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    
+  </script>
+</html>
